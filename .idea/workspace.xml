@@ -1,7 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f7a79ce-9a10-4adb-a0ac-2baa476ea934" name="Default Changelist" comment="" />
+    <list default="true" id="7f7a79ce-9a10-4adb-a0ac-2baa476ea934" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-common/src/main/java/com/jason/rpc/enumeration/PackageType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-common/src/main/java/com/jason/rpc/enumeration/SerializerCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/codec/CommonDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/codec/CommonEncoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/serializer/CommonSerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/serializer/JsonSerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/transport/netty/client/NettyClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/transport/netty/client/NettyClientHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/transport/netty/server/NettyServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/transport/netty/server/NettyServerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/transport/socket/client/SocketClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/transport/socket/server/SocketServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-client/src/main/java/com/jason/test/NettyTestClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-server/src/main/java/com/jason/test/NettyTestServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-api/src/main/java/com/jason/rpc/api/HelloObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-api/src/main/java/com/jason/rpc/api/HelloObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-api/target/classes/com/jason/rpc/api/HelloObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-api/target/classes/com/jason/rpc/api/HelloObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-common/src/main/java/com/jason/rpc/entity/RpcRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/src/main/java/com/jason/rpc/entity/RpcRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-common/target/classes/com/jason/rpc/entity/RpcRequest$RpcRequestBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-common/target/classes/com/jason/rpc/entity/RpcRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/target/classes/com/jason/rpc/entity/RpcRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/registry/DefaultServiceRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/registry/DefaultServiceRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/transport/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/handler/RequestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/transport/RequestHandlerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/transport/socket/server/SocketRequestHandlerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/transport/RpcClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/transport/RpcClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/transport/RpcClientProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/transport/RpcClientProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/transport/RpcServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/transport/RpcServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/jason/rpc/transport/WorkerThread.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/com/jason/rpc/registry/DefaultServiceRegistry.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/target/classes/com/jason/rpc/registry/DefaultServiceRegistry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/com/jason/rpc/transport/RequestHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/com/jason/rpc/transport/RequestHandlerThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/com/jason/rpc/transport/RpcClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/target/classes/com/jason/rpc/transport/RpcClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/com/jason/rpc/transport/RpcClientProxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/target/classes/com/jason/rpc/transport/RpcClientProxy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/com/jason/rpc/transport/RpcServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/target/classes/com/jason/rpc/transport/RpcServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/com/jason/rpc/transport/WorkerThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-client/src/main/java/com/jason/test/TestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/test-client/src/main/java/com/jason/test/SocketTestClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-client/target/classes/com/jason/test/TestClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-server/src/main/java/com/jason/test/TestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/test-server/src/main/java/com/jason/test/SocketTestServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-server/target/classes/com/jason/test/TestServer.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +71,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -38,6 +82,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1n6PsuWwP7yOnejOh28qYxyQsMr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -45,6 +92,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -57,9 +105,9 @@
       <recent name="com.jason.rpc.api" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestServer">
-    <configuration name="TestClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.jason.test.TestClient" />
+  <component name="RunManager" selected="Application.NettyTestClient">
+    <configuration name="NettyTestClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jason.test.NettyTestClient" />
       <module name="test-client" />
       <extension name="coverage">
         <pattern>
@@ -71,8 +119,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.jason.test.TestServer" />
+    <configuration name="NettyTestServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jason.test.NettyTestServer" />
+      <module name="test-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jason.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SocketTestClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jason.test.SocketTestClient" />
+      <module name="test-client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jason.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SocketTestServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jason.test.SocketTestServer" />
       <module name="test-server" />
       <extension name="coverage">
         <pattern>
@@ -86,8 +160,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestClient" />
-        <item itemvalue="Application.TestServer" />
+        <item itemvalue="Application.NettyTestClient" />
+        <item itemvalue="Application.NettyTestServer" />
+        <item itemvalue="Application.SocketTestClient" />
+        <item itemvalue="Application.SocketTestServer" />
       </list>
     </recent_temporary>
   </component>
@@ -113,7 +189,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1610707777427</updated>
-      <workItem from="1610707781089" duration="10776000" />
+      <workItem from="1610707781089" duration="22965000" />
     </task>
     <servers />
   </component>
@@ -129,30 +205,39 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1610708021589" />
-    <state x="709" y="283" key="#com.intellij.ide.util.MemberChooser" timestamp="1610710325793">
+    <state x="709" y="283" key="#com.intellij.ide.util.MemberChooser" timestamp="1610781239470">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="709" y="283" key="#com.intellij.ide.util.MemberChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1610710325793" />
-    <state width="1748" height="318" key="GridCell.Tab.0.bottom" timestamp="1610777074261">
+    <state x="709" y="283" key="#com.intellij.ide.util.MemberChooser/1792.187.1116.756/0.0.1792.1120@0.0.1792.1120" timestamp="1610781239470" />
+    <state x="507" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1610778924708">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="507" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1792.187.1116.756/0.0.1792.1120@0.0.1792.1120" timestamp="1610778924708" />
+    <state width="1748" height="237" key="GridCell.Tab.0.bottom" timestamp="1610795145247">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1748" height="318" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1610763993700" />
-    <state width="1748" height="318" key="GridCell.Tab.0.bottom/1792.187.1116.756/0.0.1792.1120@0.0.1792.1120" timestamp="1610777074261" />
-    <state width="1748" height="318" key="GridCell.Tab.0.center" timestamp="1610777074260">
+    <state width="1748" height="237" key="GridCell.Tab.0.bottom/1792.187.1116.756/0.0.1792.1120@0.0.1792.1120" timestamp="1610795145247" />
+    <state width="1748" height="272" key="GridCell.Tab.0.bottom/1792.210.1116.733/0.0.1792.1120@0.0.1792.1120" timestamp="1610786886287" />
+    <state width="1748" height="237" key="GridCell.Tab.0.center" timestamp="1610795145246">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1748" height="318" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1610763993699" />
-    <state width="1748" height="318" key="GridCell.Tab.0.center/1792.187.1116.756/0.0.1792.1120@0.0.1792.1120" timestamp="1610777074260" />
-    <state width="1748" height="318" key="GridCell.Tab.0.left" timestamp="1610777074257">
+    <state width="1748" height="237" key="GridCell.Tab.0.center/1792.187.1116.756/0.0.1792.1120@0.0.1792.1120" timestamp="1610795145246" />
+    <state width="1748" height="272" key="GridCell.Tab.0.center/1792.210.1116.733/0.0.1792.1120@0.0.1792.1120" timestamp="1610786886285" />
+    <state width="1748" height="237" key="GridCell.Tab.0.left" timestamp="1610795145244">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1748" height="318" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1610763993698" />
-    <state width="1748" height="318" key="GridCell.Tab.0.left/1792.187.1116.756/0.0.1792.1120@0.0.1792.1120" timestamp="1610777074257" />
-    <state width="1748" height="318" key="GridCell.Tab.0.right" timestamp="1610777074260">
+    <state width="1748" height="237" key="GridCell.Tab.0.left/1792.187.1116.756/0.0.1792.1120@0.0.1792.1120" timestamp="1610795145244" />
+    <state width="1748" height="272" key="GridCell.Tab.0.left/1792.210.1116.733/0.0.1792.1120@0.0.1792.1120" timestamp="1610786886283" />
+    <state width="1748" height="237" key="GridCell.Tab.0.right" timestamp="1610795145247">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1748" height="318" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1610763993700" />
-    <state width="1748" height="318" key="GridCell.Tab.0.right/1792.187.1116.756/0.0.1792.1120@0.0.1792.1120" timestamp="1610777074260" />
+    <state width="1748" height="237" key="GridCell.Tab.0.right/1792.187.1116.756/0.0.1792.1120@0.0.1792.1120" timestamp="1610795145247" />
+    <state width="1748" height="272" key="GridCell.Tab.0.right/1792.210.1116.733/0.0.1792.1120@0.0.1792.1120" timestamp="1610786886286" />
     <state x="434" y="222" key="Maven.ArtifactSearchDialog" timestamp="1610708589570">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
@@ -165,9 +250,17 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="573" y="392" key="com.intellij.ide.util.TipDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1610707781932" />
+    <state x="655" y="294" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1610780605674">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="655" y="294" key="com.intellij.testIntegration.createTest.CreateTestDialog/1792.187.1116.756/0.0.1792.1120@0.0.1792.1120" timestamp="1610780605674" />
     <state x="273" y="257" key="new project wizard" timestamp="1610710908819">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="273" y="257" key="new project wizard/0.0.1792.1120@0.0.1792.1120" timestamp="1610710908819" />
+    <state x="658" y="173" key="refactoring.ChangeSignatureDialog" timestamp="1610783785793">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="658" y="173" key="refactoring.ChangeSignatureDialog/1792.187.1116.756/0.0.1792.1120@0.0.1792.1120" timestamp="1610783785793" />
   </component>
 </project>

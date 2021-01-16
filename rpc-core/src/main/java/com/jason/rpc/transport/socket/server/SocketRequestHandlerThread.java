@@ -1,8 +1,9 @@
-package com.jason.rpc.transport;
+package com.jason.rpc.transport.socket.server;
 
 import com.jason.rpc.entity.RpcRequest;
 import com.jason.rpc.entity.RpcResponse;
 import com.jason.rpc.registry.ServiceRegistry;
+import com.jason.rpc.handler.RequestHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,15 +12,15 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
-public class RequestHandlerThread implements Runnable {
+public class SocketRequestHandlerThread implements Runnable {
 
-    private static final Logger logger = LoggerFactory.getLogger(RequestHandlerThread.class);
+    private static final Logger logger = LoggerFactory.getLogger(SocketRequestHandlerThread.class);
 
     private Socket socket;
     private RequestHandler requestHandler;
     private ServiceRegistry serviceRegistry;
 
-    public RequestHandlerThread(Socket socket, RequestHandler requestHandler, ServiceRegistry serviceRegistry) {
+    public SocketRequestHandlerThread(Socket socket, RequestHandler requestHandler, ServiceRegistry serviceRegistry) {
         this.socket = socket;
         this.requestHandler = requestHandler;
         this.serviceRegistry = serviceRegistry;
