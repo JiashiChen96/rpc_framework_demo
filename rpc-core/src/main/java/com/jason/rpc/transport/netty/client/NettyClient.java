@@ -4,7 +4,10 @@ import com.jason.rpc.entity.RpcRequest;
 import com.jason.rpc.entity.RpcResponse;
 import com.jason.rpc.enumeration.RpcError;
 import com.jason.rpc.exception.RpcException;
+import com.jason.rpc.loadbalancer.RoundRobinLoadBalancer;
+import com.jason.rpc.registry.NacosServiceDiscovery;
 import com.jason.rpc.registry.NacosServiceRegistry;
+import com.jason.rpc.registry.ServiceDiscovery;
 import com.jason.rpc.registry.ServiceRegistry;
 import com.jason.rpc.serializer.CommonSerializer;
 import com.jason.rpc.transport.RpcClient;
@@ -24,12 +27,14 @@ public class NettyClient implements RpcClient {
     private static final Logger logger = LoggerFactory.getLogger(NettyClient.class);
 
     private static final Bootstrap bootstrap;
-    private final ServiceRegistry serviceRegistry;
 
+    private final ServiceRegistry serviceRegistry;
+    private final ServiceDiscovery serviceDiscovery;
     private CommonSerializer serializer;
 
     public NettyClient() {
         this.serviceRegistry = new NacosServiceRegistry();
+        this.serviceDiscovery = new NacosServiceDiscovery(new RoundRobinLoadBalancer());
     }
 
     static {
@@ -48,7 +53,7 @@ public class NettyClient implements RpcClient {
         }
         AtomicReference<Object> result = new AtomicReference<>(null);
         try {
-            InetSocketAddress inetSocketAddress = serviceRegistry.lookupService(rpcRequest.getInterfaceName());
+            InetSocketAddress inetSocketAddress = serviceDiscovery.lookupService(rpcRequest.getInterfaceName());
             Channel channel = ChannelProvider.get(inetSocketAddress, serializer);
             if(channel != null) {
                 channel.writeAndFlush(rpcRequest).addListener(future1 -> {

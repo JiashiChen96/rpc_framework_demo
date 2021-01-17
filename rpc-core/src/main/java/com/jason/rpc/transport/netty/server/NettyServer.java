@@ -4,13 +4,12 @@ import com.jason.rpc.codec.CommonDecoder;
 import com.jason.rpc.codec.CommonEncoder;
 import com.jason.rpc.enumeration.RpcError;
 import com.jason.rpc.exception.RpcException;
+import com.jason.rpc.hook.ShutdownHook;
 import com.jason.rpc.provider.ServiceProvider;
 import com.jason.rpc.provider.ServiceProviderImpl;
 import com.jason.rpc.registry.NacosServiceRegistry;
 import com.jason.rpc.registry.ServiceRegistry;
 import com.jason.rpc.serializer.CommonSerializer;
-import com.jason.rpc.serializer.JsonSerializer;
-import com.jason.rpc.serializer.KryoSerializer;
 import com.jason.rpc.transport.RpcServer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
@@ -45,6 +44,7 @@ public class NettyServer implements RpcServer {
 
     @Override
     public void start() {
+        ShutdownHook.getShutdownHook().addClearAllHook();
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
