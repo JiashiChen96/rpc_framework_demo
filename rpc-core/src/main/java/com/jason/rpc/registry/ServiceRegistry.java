@@ -1,8 +1,9 @@
 package com.jason.rpc.registry;
 
+import java.net.InetSocketAddress;
+
 public interface ServiceRegistry {
-
-    <T> void register(T service);
-    Object getService(String serviceName);
-
+    void register(String serviceName, InetSocketAddress inetSocketAddress);
+    InetSocketAddress lookupService(String serviceName);
 }
+
