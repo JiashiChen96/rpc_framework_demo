@@ -1,41 +1,49 @@
 package com.jason.rpc.transport.socket.server;
 
-import com.jason.rpc.registry.ServiceRegistry;
+import com.jason.rpc.factory.ThreadPoolFactory;
+import com.jason.rpc.hook.ShutdownHook;
+import com.jason.rpc.provider.ServiceProviderImpl;
+import com.jason.rpc.registry.NacosServiceRegistry;
 import com.jason.rpc.handler.RequestHandler;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.jason.rpc.serializer.CommonSerializer;
+import com.jason.rpc.transport.AbstractRpcServer;
 
 import java.io.IOException;
+import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.*;
 
-public class SocketServer {
+public class SocketServer extends AbstractRpcServer {
 
-    private static final Logger logger = LoggerFactory.getLogger(SocketServer.class);
-
-    private static final int CORE_POOL_SIZE = 5;
-    private static final int MAXIMUM_POOL_SIZE = 50;
-    private static final int KEEP_ALIVE_TIME = 60;
-    private static final int BLOCKING_QUEUE_CAPACITY = 100;
     private final ExecutorService threadPool;
-    private RequestHandler requestHandler = new RequestHandler();
-    private final ServiceRegistry serviceRegistry;
+    private final CommonSerializer serializer;
+    private final RequestHandler requestHandler = new RequestHandler();
 
-    public SocketServer(ServiceRegistry serviceRegistry) {
-        this.serviceRegistry = serviceRegistry;
-        BlockingQueue<Runnable> workingQueue = new ArrayBlockingQueue<>(BLOCKING_QUEUE_CAPACITY);
-        ThreadFactory threadFactory = Executors.defaultThreadFactory();
-        threadPool = new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, KEEP_ALIVE_TIME, TimeUnit.SECONDS, workingQueue, threadFactory);
+    public SocketServer(String host, int port) {
+        this(host, port, DEFAULT_SERIALIZER);
     }
 
-    public void start(int port) {
-        try (ServerSocket serverSocket = new ServerSocket(port)) {
+    public SocketServer(String host, int port, Integer serializer) {
+        this.host = host;
+        this.port = port;
+        threadPool = ThreadPoolFactory.createDefaultThreadPool("socket-rpc-server");
+        this.serviceRegistry = new NacosServiceRegistry();
+        this.serviceProvider = new ServiceProviderImpl();
+        this.serializer = CommonSerializer.getByCode(serializer);
+        scanServices();
+    }
+
+    @Override
+    public void start() {
+        try (ServerSocket serverSocket = new ServerSocket()) {
+            serverSocket.bind(new InetSocketAddress(host, port));
             logger.info("服务器启动……");
+            ShutdownHook.getShutdownHook().addClearAllHook();
             Socket socket;
-            while((socket = serverSocket.accept()) != null) {
+            while ((socket = serverSocket.accept()) != null) {
                 logger.info("消费者连接: {}:{}", socket.getInetAddress(), socket.getPort());
-                threadPool.execute(new SocketRequestHandlerThread(socket, requestHandler, serviceRegistry));
+                threadPool.execute(new SocketRequestHandlerThread(socket, requestHandler, serializer));
             }
             threadPool.shutdown();
         } catch (IOException e) {

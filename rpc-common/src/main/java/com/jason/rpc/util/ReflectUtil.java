@@ -29,7 +29,7 @@ public class ReflectUtil {
                     packageDirName);
             // 循环迭代下去
             while (dirs.hasMoreElements()) {
-                // 获取下一个元素
+                // 获取下一个元素, eg: url="file:/Users/jiashichen/Study/Project/...../jason/test"
                 URL url = dirs.nextElement();
                 // 得到协议的名称
                 String protocol = url.getProtocol();
@@ -127,8 +127,7 @@ public class ReflectUtil {
             // 如果是目录 则继续扫描
             if (file.isDirectory()) {
                 findAndAddClassesInPackageByFile(packageName + "."
-                                + file.getName(), file.getAbsolutePath(), recursive,
-                        classes);
+                                + file.getName(), file.getAbsolutePath(), recursive, classes);
             } else {
                 // 如果是java类文件 去掉后面的.class 只留下类名
                 String className = file.getName().substring(0,

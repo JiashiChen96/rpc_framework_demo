@@ -1,17 +1,16 @@
 package com.jason.test;
 
-import com.jason.rpc.api.HelloService;
-import com.jason.rpc.registry.ServiceRegistry;
+import com.jason.rpc.annotation.ServiceScan;
+import com.jason.rpc.serializer.CommonSerializer;
+import com.jason.rpc.transport.RpcServer;
 import com.jason.rpc.transport.socket.server.SocketServer;
 
+@ServiceScan
 public class SocketTestServer {
 
     public static void main(String[] args) {
-//        HelloService helloService = new HelloServiceImpl();
-//        ServiceRegistry serviceRegistry = new DefaultServiceRegistry();
-//        serviceRegistry.register(helloService);
-//        SocketServer rpcServer = new SocketServer(serviceRegistry);
-//        rpcServer.start(9000);
+        RpcServer server = new SocketServer("127.0.0.1", 9998, CommonSerializer.KRYO_SERIALIZER);
+        server.start();
     }
 
 }

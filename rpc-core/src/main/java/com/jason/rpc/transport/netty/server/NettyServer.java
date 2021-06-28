@@ -35,7 +35,10 @@ public class NettyServer extends AbstractRpcServer {
 
     @Override
     public void start() {
+
+        // 启动关闭服务器时，自动注销服务
         ShutdownHook.getShutdownHook().addClearAllHook();
+
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {

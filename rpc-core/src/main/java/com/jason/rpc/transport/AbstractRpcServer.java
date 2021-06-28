@@ -24,7 +24,7 @@ public abstract class AbstractRpcServer implements RpcServer {
     protected ServiceProvider serviceProvider;
 
     public void scanServices() {
-        String mainClassName = ReflectUtil.getStackTrace();
+        String mainClassName = ReflectUtil.getStackTrace(); //获得server启动类名"com.jason.test.NettyTestServer"
         Class<?> startClass;
         try {
             startClass = Class.forName(mainClassName);
@@ -36,9 +36,9 @@ public abstract class AbstractRpcServer implements RpcServer {
             logger.error("出现未知错误");
             throw new RpcException(RpcError.UNKNOWN_ERROR);
         }
-        String basePackage = startClass.getAnnotation(ServiceScan.class).value();
+        String basePackage = startClass.getAnnotation(ServiceScan.class).value(); //basePackage=""
         if("".equals(basePackage)) {
-            basePackage = mainClassName.substring(0, mainClassName.lastIndexOf("."));
+            basePackage = mainClassName.substring(0, mainClassName.lastIndexOf(".")); //basePackage="com.jason.test"
         }
         Set<Class<?>> classSet = ReflectUtil.getClasses(basePackage);
         for(Class<?> clazz : classSet) {
